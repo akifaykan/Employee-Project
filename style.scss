@@ -12,8 +12,8 @@
   --colorized8: hsl(var(--hue), 10%, 23%);
   --colorized9: hsl(var(--hue), 11%, 15%);
 
-  --color-white: #fff;
-  --color-black: #000;
+  --color-white: var(--colorized1);
+  --color-black: var(--colorized7);
   --body-font: 'Quicksand', sans-serif;
   --success-bg-color: #c1d5ba;
   --success-color: #3d642f;
