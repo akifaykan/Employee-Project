@@ -1,26 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-$hue: 600;
-$colour1: hsl($hue, 17%, 98%);
-$colour2: hsl($hue, 16%, 93%);
-$colour3: hsl($hue, 14%, 89%);
-$colour4: hsl($hue, 14%, 83%);
-$colour5: hsl($hue, 11%, 71%);
-$colour6: hsl($hue, 7%, 46%);
-$colour7: hsl($hue, 9%, 31%);
-$colour8: hsl($hue, 10%, 23%);
-$colour9: hsl($hue, 11%, 15%);
-
-@function set-color($colour) {
-  @if (lightness($colour) > 50) {
-    @return #000000;
-  } @else {
-    @return #ffffff;
-  }
-}
-
 :root {
+  --hue: 270;
+  --colorized1: hsl(var(--hue), 17%, 98%);
+  --colorized2: hsl(var(--hue), 16%, 93%);
+  --colorized3: hsl(var(--hue), 14%, 89%);
+  --colorized4: hsl(var(--hue), 14%, 83%);
+  --colorized5: hsl(var(--hue), 11%, 71%);
+  --colorized6: hsl(var(--hue), 7%, 46%);
+  --colorized7: hsl(var(--hue), 9%, 31%);
+  --colorized8: hsl(var(--hue), 10%, 23%);
+  --colorized9: hsl(var(--hue), 11%, 15%);
+
   --color-white: #fff;
+  --color-black: #000;
   --body-font: 'Quicksand', sans-serif;
   --success-bg-color: #c1d5ba;
   --success-color: #3d642f;
@@ -49,10 +42,10 @@ body {
 
 a {
   text-decoration: none;
-  color: $colour9;
+  color: var(--colorized9);
   transition: all .2s ease;
   &:hover{
-    color: $colour8;
+    color: var(--colorized8);
   }
 }
 
@@ -63,18 +56,6 @@ a {
 
 ul:not(class), ol:not(class) {
   list-style-type: none;
-}
-
-.item_button {
-  background-color: $colour9;
-  color: $colour1;
-  padding: .4rem .8rem;
-  border-radius: 2px;
-  font-size: 0.8rem;
-  display: inline-flex;
-  &:hover {
-    background-color: $colour8;
-  }
 }
 
 .app{
@@ -117,7 +98,7 @@ form {
   textarea,
   select {
     font-family: var(--body-font);
-    background: $colour3;
+    background: var(--colorized3);
     width: 100%;
     border: 0;
     margin: 0 0 1rem;
@@ -129,32 +110,31 @@ form {
   button {
     font-family: var(--body-font);
     text-transform: uppercase;
-    background: $colour9;
+    background: var(--colorized9);
     border: 0;
     padding: 15px;
-    color: $colour1;
+    color: var(--colorized1);
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
     transition: all 0.2s ease;
     &:hover{
-      background: $colour8;
+      background: var(--colorized8);
     }
   }
 }
-
 
 table {  
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
   display: table;
-  border: 1px solid $colour6;
+  border: 1px solid var(--colorized6);
   margin-bottom: 2rem;
   tr {
-    border-bottom: 1px solid $colour2;
+    border-bottom: 1px solid var(--colorized2);
     &:nth-child(2n+2) {
-      background-color: $colour7;
+      background-color: var(--colorized7);
     }
   }
   th:first-child,
@@ -169,34 +149,59 @@ table {
   }
   tfoot {
     tr {
-      background-color: $colour8;
+      background-color: var(--colorized8);
     }
   }
   thead {
-    background-color: $colour7;
-    color: $colour2;
+    background-color: var(--colorized7);
+    color: var(--colorized2);
   }
 }
 
-.loading {
-  opacity: 0.5;
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    top: 30px;
-    left: calc(50% - 10px);
-    width: 20px;
-    height: 20px;
-    border: 4px dashed $colour9;
-    animation: spin 2s linear infinite;
-    border-radius: 50%;
+#loding-action:checked {
+  & ~ .colorized {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: calc(50% - 19px);
+      left: calc(50% - 19px);
+      width: 26px;
+      height: 26px;
+      border: 6px solid var(--colorized1);
+      border-top-color: var(--colorized7);
+      animation: spin 1.3s linear infinite;
+      border-radius: 50%;
+      z-index: 6;
+    }
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      z-index: 5;
+    }
   }
 }
 
 @keyframes spin {
   0% { transform: rotate(0deg) }
   100% { transform: rotate(360deg) }
+}
+
+.item_button {
+  background-color: var(--colorized9);
+  color: var(--colorized1);
+  padding: .4rem .8rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  user-select: none;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--colorized8);
+  }
 }
 
 .colorized {
@@ -210,40 +215,40 @@ table {
     align-items: center;
     justify-content: center;
     &:nth-child(1){
-      background-color: $colour1;
-      color: set-color( $colour1 );
+      background-color: var(--colorized1);
+      color: var(--color-black);
     }
     &:nth-child(2){
-      background-color: $colour2;
-      color: set-color( $colour2 );
+      background-color: var(--colorized2);
+      color: var(--color-black);
     }
     &:nth-child(3){
-      background-color: $colour3;
-      color: set-color( $colour3 );
+      background-color: var(--colorized3);
+      color: var(--color-black);
     }
     &:nth-child(4){
-      background-color: $colour4;
-      color: set-color( $colour4 );
+      background-color: var(--colorized4);
+      color: var(--color-black);
     }
     &:nth-child(5){
-      background-color: $colour5;
-      color: set-color( $colour5 );
+      background-color: var(--colorized5);
+      color: var(--color-black);
     }
     &:nth-child(6){
-      background-color: $colour6;
-      color: set-color( $colour6 );
+      background-color: var(--colorized6);
+      color: var(--color-white);
     }
     &:nth-child(7){
-      background-color: $colour7;
-      color: set-color( $colour7 );
+      background-color: var(--colorized7);
+      color: var(--color-white);
     }
     &:nth-child(8){
-      background-color: $colour8;
-      color: set-color( $colour8 );
+      background-color: var(--colorized8);
+      color: var(--color-white);
     }
     &:nth-child(9){
-      background-color: $colour9;
-      color: set-color( $colour9 );
+      background-color: var(--colorized9);
+      color: var(--color-white);
     }
   }
 }
