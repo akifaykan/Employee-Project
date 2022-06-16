@@ -2,11 +2,17 @@
   "name": "employ",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack-config.js",
+  "main": "./src/index.js",
   "scripts": {
-    "build": "webpack --watch"
+    "test": "This is a test",
+    "start": "webpack-dev-server --output-public-path=/bundles/  --mode development --open --hot",
+    "build": "webpack --progress",
+    "json": "json-server --watch api/employe.json"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "employe",
+    "project"
+  ],
+  "author": "Mehmet Akif Aykan",
+  "license": "ISC"
 }

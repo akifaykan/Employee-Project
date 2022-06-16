@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "name": "Gamze Çelik",
+      "salary": 4500,
+      "id": 1
+    },
+    {
+      "name": "Kemal Yerli",
+      "salary": 9300,
+      "id": 2
+    },
+    {
+      "name": "Aslı Doğan",
+      "salary": 3400,
+      "id": 3
+    },
+    {
+      "name": "Halil Tahtalı",
+      "salary": 7600,
+      "id": 4
+    },
+    {
+      "name": "Ahmet Koral",
+      "salary": 4250,
+      "id": 6
+    },
+    {
+      "name": "Merve Çalı",
+      "salary": 5200,
+      "id": 7
+    },
+    {
+      "name": "Kasım Coşkun",
+      "salary": 3532,
+      "id": 8
+    },
+    {
+      "name": "Kasım Coşkun",
+      "salary": 3532,
+      "id": 9
+    },
+    {
+      "name": "Kasım Coşkunn",
+      "salary": 3532,
+      "id": 10
+    }
+  ]
+}

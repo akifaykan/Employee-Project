@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <input id="loding-action" style="display: none" type="checkbox" autocomplete="off">
+        <div class="colorized">
+            <span>FLEX 1</span>
+            <span>FLEX 2</span>
+            <span>FLEX 3</span>
+            <span>FLEX 4</span>
+            <span>FLEX 5</span>
+            <span>FLEX 6</span>
+            <span>FLEX 7</span>
+            <span>FLEX 8</span>
+            <span>FLEX 9</span>
+        </div>
+
+        <label for="loding-action" class="item_button mt">Click Css Loader</label>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="employe-wrap mt mb">
+            <div class="form-item">
+                <h2 class="mb">Çalışan Ekle</h2>
+                <form id="employe-form">
+                    <input id="employe-name" type="text" placeholder="Çalışan adı">
+                    <input id="employe-salary" type="text" placeholder="Maaş">
+                    <button type="submit" class="item_button">Kaydet</button>
+                </form>
+                <div id="messages"></div>
+            </div>
+            <div class="table-item">
+                <h2 class="mb">Çalışanların Listesi</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>İsim</th>
+                            <th>Maaş</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="employe-table"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <span>© 2022 Employee Project</span>
+    </div>
+</footer>
+
+<script src="../bundles/bundle.js"></script>
+</body>
+</html>

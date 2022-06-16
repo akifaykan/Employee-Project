@@ -1,4 +1,6 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+*/
 
 :root {
   --hue: 270;
@@ -32,12 +34,17 @@
 }
 
 body {
+  color: var(--colorized7);
   font-family: var(--body-font);
   font-weight: 600;
   overflow-y: scroll;
   overflow-x: hidden;
   word-wrap: break-word;
   text-rendering: optimizeLegibility;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 a {
@@ -63,8 +70,12 @@ ul:not(class), ol:not(class) {
   margin: 2rem auto;
 }
 
-.br {
+.pt {
   padding-top: 1rem; 
+}
+
+.pb {
+  padding-top: 1rem;
 }
 
 .mb {
@@ -98,7 +109,7 @@ form {
   textarea,
   select {
     font-family: var(--body-font);
-    background: var(--colorized3);
+    background: var(--colorized2);
     width: 100%;
     border: 0;
     margin: 0 0 1rem;
@@ -129,12 +140,11 @@ table {
   border-spacing: 0;
   width: 100%;
   display: table;
-  border: 1px solid var(--colorized6);
   margin-bottom: 2rem;
   tr {
     border-bottom: 1px solid var(--colorized2);
     &:nth-child(2n+2) {
-      background-color: var(--colorized7);
+      background-color: var(--colorized1);
     }
   }
   th:first-child,
@@ -201,11 +211,11 @@ table {
   cursor: pointer;
   &:hover {
     background-color: var(--colorized8);
+    color: var(--colorized1);
   }
-}
+} 
 
 .colorized {
-  display: flex;
   display: flex;
   flex-wrap: wrap;
   span {
@@ -250,5 +260,64 @@ table {
       background-color: var(--colorized9);
       color: var(--color-white);
     }
+  }
+}
+
+.employe-wrap {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-gap: 3rem;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  column-gap: .3rem;
+}
+
+footer {
+  margin-top: auto;
+  background-color: var(--colorized9);
+  color: var(--colorized1);
+  padding: 2rem;
+  text-align: center;
+}
+
+@media screen and (max-width:1300px){
+  .container {
+    padding: 0 1rem;
+  }
+  .colorized{
+    justify-content: center;
+  }
+  .colorized span {
+    width: 11.1%;
+  }
+}
+
+@media screen and (max-width:992px){
+  .employe-wrap {
+    grid-template-columns: 100%;
+  }
+}
+
+@media screen and (max-width:768px){
+  .colorized span {
+    width: 20%;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width:480px){
+  .colorized span {
+    width: 33%;
+  }
+  html {
+    font-size: 90%;
   }
 }
