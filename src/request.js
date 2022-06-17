@@ -38,10 +38,8 @@ export class Request {
     }
 
     async delete(id){
-        const response =  await fetch(`${this.url}/${id}`, {
+        await fetch(`${this.url}/${id}`, {
             method: 'DELETE'
         })
-
-        return "Veri silindi"
     }
 }
