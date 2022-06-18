@@ -27,7 +27,7 @@
             <span>FLEX 9</span>
         </div>
 
-        <label for="loding-action" class="item_button mt">Click Css Loader</label>
+        <!--<label for="loding-action" class="item_button mt">Click Css Loader</label>-->
     </div>
 </header>
 
@@ -39,8 +39,9 @@
                 <form id="employe-form">
                     <input id="employe-name" type="text" placeholder="Çalışan adı">
                     <input id="employe-salary" type="text" placeholder="Maaş">
-                    <button id="employe-button" class="item_button">Kaydet</button>
-                    <a id="employe-close" class="item_button" style="display:none">KAPAT</a>
+                    <button id="employe-button" class="item_button" data-view="show">Kaydet</button>
+                    <a id="employe-update" class="item_button" data-view="hide">GÜNCELLE</a>
+                    <a id="employe-close" class="item_button ml" data-view="hide">İPTAL</a>
                 </form>
                 <div id="messages"></div>
             </div>

@@ -214,6 +214,7 @@ table {
   display: inline-flex;
   user-select: none;
   cursor: pointer;
+  font-weight: bold;
   &:hover {
     background-color: var(--colorized8);
     color: var(--colorized1);
@@ -283,6 +284,22 @@ table {
   align-items: center;
   justify-content: end;
   column-gap: .3rem;
+}
+
+[data-view="show"]{
+  display: inline-flex;
+}
+
+[data-view="hide"]{
+  display: none;
+}
+
+table tr.edit {
+  background-color: var(--colorized3);
+}
+
+header {
+  padding-bottom: 3rem;
 }
 
 footer {
