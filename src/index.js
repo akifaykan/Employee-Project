@@ -14,12 +14,14 @@ class Index {
         this.table = document.getElementById('employe-table')
         this.update = document.getElementById('employe-update')
         this.close = document.getElementById('employe-close')
+        this.search = document.getElementById('search-employee')
 
         document.addEventListener('DOMContentLoaded', () => this.getLoadedEmployees())
 
         this.form.addEventListener('submit', (e) => this.formSubmit(e))
         this.table.addEventListener('click', (e) => this.editOrDelete(e))
         this.update.addEventListener('click', () => this.updateEmployeesUpdate())
+        this.search.addEventListener('input', (e) => this.searchFilter(e))
     }
 
     formSubmit(e){
@@ -31,7 +33,7 @@ class Index {
         } else {
             req.post({
                 name: nameInput,
-                salary: Number(salaryInput)
+                salary: +salaryInput
             })
                 .then(employee => {
                     ui.addEmployeeUI(employee)
@@ -98,6 +100,14 @@ class Index {
         }
 
         ui.clearInput()
+    }
+
+    searchFilter(e){
+        req.get()
+            .then(employees => {
+                ui.searchFilterUI(employees, e)
+            })
+            .catch(err => console.log(err))
     }
 }
 

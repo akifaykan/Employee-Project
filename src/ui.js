@@ -15,34 +15,14 @@ export class UI {
         let result = ""
 
         employees.forEach(employee => {
-            result += `
-                <tr data-id="${employee.id}">
-                    <td>${employee.id}</td>
-                    <td>${employee.name}</td>
-                    <td>${employee.salary}₺</td>
-                    <td class="text-right flex">
-                        <a id="employe-edit" class="item_button">Düzenle</a>
-                        <a id="employe-delete" class="item_button">Sil</a>
-                    </td>
-                </tr>
-            `
+            result += this.templateItem(employee)
         })
 
         this.table.innerHTML = result
     }
 
     addEmployeeUI(employee){
-        this.table.innerHTML += `
-            <tr data-id="${employee.id}">
-                <td>${employee.id}</td>
-                <td>${employee.name}</td>
-                <td>${employee.salary}₺</td>
-                <td class="text-right flex">
-                    <a id="employe-edit" class="item_button">Düzenle</a>
-                    <a id="employe-delete" class="item_button">Sil</a>
-                </td>
-            </tr>
-        `
+        this.table.innerHTML += this.templateItem(employee)
     }
 
     editEmployeeUI(tr){
@@ -54,17 +34,7 @@ export class UI {
     }
 
     updateEmployeOnUI(employee, tr){
-        tr.innerHTML = `
-            <tr data-id="${employee.id}">
-                <td>${employee.id}</td>
-                <td>${employee.name}</td>
-                <td>${employee.salary}₺</td>
-                <td class="text-right flex">
-                    <a id="employe-edit" class="item_button">Düzenle</a>
-                    <a id="employe-delete" class="item_button">Sil</a>
-                </td>
-            </tr>
-        `
+        tr.innerHTML = this.templateItem(employee)
     }
 
     employeeToInput(tr){
@@ -96,6 +66,38 @@ export class UI {
                 item.classList.remove('edit')
             }
         }
+    }
+
+    searchFilterUI(employees, e){
+        let temp = ''
+
+        const result = employees.filter(employee => {
+            return employee.name.toLowerCase().includes(e.target.value.toLowerCase())
+        })
+
+        if(result.length){
+            result.forEach(item => {
+                temp += this.templateItem(item)
+            })
+        } else {
+            temp = '<tr><th>Çalışan Bulunamadı!</th></tr>'
+        }
+
+        this.table.innerHTML = temp
+    }
+
+    templateItem(item){
+        return `
+            <tr data-id="${item.id}">
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.salary}₺</td>
+                <td class="text-right flex">
+                    <a id="employe-edit" class="item_button">Düzenle</a>
+                    <a id="employe-delete" class="item_button">Sil</a>
+                </td>
+            </tr>
+        `
     }
 
     message(message, classes){

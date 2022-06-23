@@ -1,6 +1,3 @@
-/*
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-*/
 
 :root {
   --hue: 270;
@@ -16,7 +13,9 @@
 
   --color-white: var(--colorized1);
   --color-black: var(--colorized7);
+
   --body-font: 'Quicksand', sans-serif;
+
   --success-bg-color: #c1d5ba;
   --success-color: #3d642f;
   --error-bg-color: #d5baba;
@@ -58,7 +57,7 @@ a {
 
 .container {
   max-width: 1280px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 ul:not(class), ol:not(class) {
@@ -71,7 +70,7 @@ ul:not(class), ol:not(class) {
 }
 
 .pt {
-  padding-top: 1rem; 
+  padding-top: 1rem;
 }
 
 .pb {
@@ -110,37 +109,37 @@ ul:not(class), ol:not(class) {
 
 form {
   position: relative;
-  input,
-  textarea,
-  select {
-    font-family: var(--body-font);
-    background: var(--colorized2);
-    width: 100%;
-    border: 0;
-    margin: 0 0 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  button {
-    font-family: var(--body-font);
-    text-transform: uppercase;
-    background: var(--colorized9);
-    border: 0;
-    padding: 15px;
-    color: var(--colorized1);
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    &:hover{
-      background: var(--colorized8);
-    }
+}
+input,
+textarea,
+select {
+  font-family: var(--body-font);
+  background: var(--colorized2);
+  width: 100%;
+  border: 0;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 500;
+}
+button {
+  font-family: var(--body-font);
+  text-transform: uppercase;
+  background: var(--colorized9);
+  border: 0;
+  padding: 15px;
+  color: var(--colorized1);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  &:hover{
+    background: var(--colorized8);
   }
 }
 
-table {  
+table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -296,6 +295,16 @@ table {
 
 table tr.edit {
   background-color: var(--colorized3);
+}
+
+.table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#search-employee {
+  max-width: 350px;
 }
 
 header {
