@@ -80,7 +80,7 @@ export class UI {
                 temp += this.templateItem(item)
             })
         } else {
-            temp = '<tr><th>Çalışan Bulunamadı!</th></tr>'
+            temp = '<tr><td colspan="4" style="text-align:center">Çalışan Bulunamadı!</td></tr>'
         }
 
         this.table.innerHTML = temp
